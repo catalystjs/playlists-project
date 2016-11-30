@@ -1,0 +1,28 @@
+@model beltexam3.Models.Song
+
+@{
+    ViewData["Title"] = "Song Framework";
+    ViewData["NavBar"] = true;
+    List<int> users_tracked = new List<int>();
+}
+<div class=song-page>
+    <p>Others who added @Model.Artist - @Model.Title</p>
+    <table class="users-table">
+        <tr>
+            <th class="name-header">Name</th>
+            <th class="count-header">Times Added</th>
+        </tr>
+        @*Let's iterate through the users owho added this song*@
+        @foreach (var playlist in Model.Playlists)
+        {
+            @if ((users_tracked.IndexOf(playlist.User.Id) == -1) && (ViewBag.userid != playlist.User.Id))
+            {
+                users_tracked.Add(playlist.User.Id);
+                <tr>
+                    <td class="name-data"><a href="/users/@playlist.User.Id">@playlist.User.name()</a></td>
+                    <td class="count-data">@playlist.User.CountSongInPlaylists(Model.Id)</td>
+                </tr>
+            }
+        }
+    </table>
+</div>

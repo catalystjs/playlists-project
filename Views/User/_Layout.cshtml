@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - User Assignment Page</title>
+    
+    <link rel="stylesheet" href=""
+            asp-fallback-href="function link() { [native code] }"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container body-content">
+        @if ((bool)ViewData["NavBar"])
+        {
+        <!--Shared navbar-->
+        <div class="navbar">
+            <h2>@ViewData["NavTitle"]</h2>
+            <div class="right-side-box">
+                @if (ViewBag.dashboard == true)
+                {
+                    <a class="logout-button" href="/users/logout">Logout</a>
+                }
+                @if (ViewBag.dashboard != true)
+                {
+                    <a class="dashboard-button" href="/songs/">Dashboard</a>
+                    <a class="logout-button" href="/users/logout">Logout</a>
+                }
+            </div>
+        </div>
+        }
+        @RenderBody()
+    </div>
+        
+        
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

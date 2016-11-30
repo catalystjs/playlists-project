@@ -1,0 +1,36 @@
+@model beltexam3.Models.SongWrapper
+
+@{
+    ViewData["Title"] = "User Framework";
+    ViewData["NavBar"] = true;
+}
+<div class=songs-page>
+    <h2>Hello, @ViewBag.user_name!</h2>
+    <p>All the songs in our hub:</p>
+    <table class="songs-table">
+        <tr>
+            <th class="artist-header">Artist</th>
+            <th class="title-header">Title</th>
+            <th class="count-header">No of Times Song Has Been Added</th>
+            <th class="action-header">Add to Playlist</th>
+        </tr>
+        @if (Model.Songs.Count > 0)
+        {
+            @*Let's iterate through the collection of songs*@
+            foreach (var song in Model.Songs)
+            {
+                <tr>
+                    <td class="artist-data">@song.Artist</td>
+                    <td class="title-data"><a href="/songs/@song.Id">@song.Title</a></td>
+                    <td class="count-data">@song.CountSongInPlaylists()</td>
+                    <td class="action-data">
+                        <a class="accept-button" href="/users/playlist/add/@song.Id">Add</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <div class="add-song-box">
+        @Html.Partial("AddSong",Model.Song)
+    </div>
+</div>

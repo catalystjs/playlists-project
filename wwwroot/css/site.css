@@ -1,0 +1,185 @@
+/*Write all of your CSS here*/
+* {
+    box-sizing: border-box;
+}
+
+.index-box {
+    width: 100%;
+}
+
+.index-box .register-box {
+    padding: 2%;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+}
+
+.index-box .login-box {
+    padding: 2%;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+}
+
+.text-danger {
+    color: red;
+}
+
+.navbar h2 {
+    display: inline-block;
+}
+
+.navbar .right-side-box {
+    width: 25%;
+    display: inline-block;
+    float: right;
+    clear: all;
+    vertical-align: middle;
+}
+
+.navbar .logout-button,
+.navbar .home-button {
+    margin-left: 3%;
+}
+
+.indent {
+    margin-left: 3%;
+}
+
+.songs-page {
+    margin: 5%;
+}
+
+.songs-page .songs-table {
+    border: 1px solid black;
+}
+
+.songs-page .songs-table {
+    border-collapse: collapse;
+    width: 75%;
+    border: 2px solid black;
+}
+
+.songs-page .songs-table tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+.songs-page .songs-table th {
+    padding: 1% 1% 1% 1%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.songs-page .songs-table td {
+    padding: 1% 1% 1% 1%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.songs-page .songs-table .artist-header {
+    width: 200px;
+}
+
+.songs-page .songs-table .title-header {
+    width: 200px;
+}
+
+.songs-page .songs-table .count-header {
+    width: 200px;
+}
+
+.songs-page .songs-table .action-header {
+    width: 200px;
+}
+
+.songs-page .songs-table th {
+    text-align: left;
+}
+
+.song-page {
+    margin: 2%;
+}
+
+.song-page .users-table {
+    border: 1px solid black;
+}
+
+.song-page .users-table {
+    border-collapse: collapse;
+    width: 50%;
+    border: 2px solid black;
+}
+
+.song-page .users-table tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+.song-page .users-table th {
+    padding: 1% 1% 1% 1%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.song-page .users-table td {
+    padding: 1% 1% 1% 1%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.song-page .users-table .name-header {
+    width: 200px;
+}
+
+.song-page .users-table .count-header {
+    width: 200px;
+}
+
+.song-page .users-table th {
+    text-align: left;
+}
+
+
+.playlist-box .playlist-table {
+    border: 1px solid black;
+}
+
+.playlist-box .playlist-table {
+    border-collapse: collapse;
+    width: 50%;
+    border: 2px solid black;
+}
+
+.playlist-box .playlist-table tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+.playlist-box .playlist-table th {
+    padding: 1% 1% 1% 1%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.playlist-box .playlist-table td {
+    padding: 1% 1% 1% 1%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.playlist-box .playlist-table .name-header {
+    width: 200px;
+}
+
+.playlist-box .playlist-table .count-header {
+    width: 200px;
+}
+
+.playlist-box .playlist-table th {
+    text-align: left;
+}
+
+.add-song-page .add-song-button {
+    margin-top: 1%;
+    box-shadow: 3px 3px 3px black;
+}
