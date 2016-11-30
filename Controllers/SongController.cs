@@ -5,9 +5,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 // Project Models
 using beltexam3.Models;
-// LINQ library
-using System.Linq;
-using System.Collections.Generic;
 
 namespace beltexam3.Controllers
 {
@@ -55,23 +52,6 @@ namespace beltexam3.Controllers
             SongWrapper songwrapper = new SongWrapper(_context.PopulateSongsAllOrderbyCreatedAt(), song);
             // Return the view of index with list of auctions attached
             return View("Index", songwrapper);
-            /*// Create a new network for the invitee and add the properties
-            Network invited_network = new Network();
-            invited_network.NetworkUserId = user.Id;
-            invited_network.NetworkRelatedUserId = userid;
-            // Create a new network for the inviter and add the properties
-            Network inviter_network = new Network();
-            inviter_network.NetworkUserId = userid;
-            inviter_network.NetworkRelatedUserId = user.Id;
-            // Handle the network list changes
-            user.Networks.Add(invited_network);
-            invited_user.Networks.Add(inviter_network);
-            // Get the needed records for the remove action
-            Invitation invitee = user.Invitations.FirstOrDefault(x => x.InvitationUserId == user.Id && x.InvitationRelatedUserId == userid);
-            user.Invitations.Remove(invitee);
-            // Save the table changes
-            _context.SaveChanges();*/
-
         }
         // GET: /{songid}/
         [HttpGet]
@@ -100,8 +80,6 @@ namespace beltexam3.Controllers
             // Return the user or null
             if (user_id != null)
             {
-                Console.WriteLine("UserId");
-                Console.WriteLine(user_id);
                 return _context.PopulateUserSingle((int)user_id);
             }
             else
@@ -115,7 +93,6 @@ namespace beltexam3.Controllers
             User user = fetchuser();
             if (user == null)
             {
-                Console.WriteLine("Doing user login");
                 // Check to make sure user is logged in
                 return user_login();
             }

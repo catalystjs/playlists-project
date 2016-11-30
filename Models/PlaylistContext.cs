@@ -60,35 +60,5 @@ namespace beltexam3.Models
         {
             return Playlists.Include(x => x.User).Include(x => x.Song).ToList();
         }
-        /*public CountSongsInPlaylist(int userid, int songid) {
-            // Let's get the user
-            User user = PopulateUserSingle(userid);
-            // Let's check the playlist for the songid
-            var playlist = PopulatePlaylist
-        }*/
-        /*
-        public ICollection<User> PopulateUsersAllNotAssociated(int userid)
-        {
-            // Get the current user
-            User currentuser = PopulateUserSingle(userid);
-            // Get the users
-            var users = PopulateUsersAll();
-            // Create the new reduced list of users
-            List<User> reducedusers = new List<User>();
-            // Iterate through the users
-            foreach (var user in users)
-            {
-                // Compound booleans
-                bool InRelationships = user.InNetworks(currentuser.Id) && user.InInvitations(currentuser.Id);
-                // LINQ queries based on Model lookups
-                if (InRelationships && currentuser.InInvitations(user.Id) && user.Id != currentuser.Id)
-                {
-                    reducedusers.Add(user);
-                }
-            }
-            // Return the reduced users
-            return reducedusers;
-        }
-        */
     }
 }

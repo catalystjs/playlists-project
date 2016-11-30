@@ -121,12 +121,7 @@ namespace beltexam3.Controllers
         {
             // Run the add song to playlist dynamic method
             return add_playlist(songid);
-            // Reset the Sessions by clearing them all
-            //HttpContext.Session.Clear();
-            // Redirect to the Index page
-            //return RedirectToAction("Index");
         }
-        
         /*  This is the user login check method
             Takes in a view name and a model for prepping the view returned */
         public dynamic user_login()
@@ -147,7 +142,6 @@ namespace beltexam3.Controllers
             if (user_id != null)
             {
                 return _context.PopulateUserSingle((int)user_id);
-                //return _context.Users.Where(item => item.Id == user_id).SingleOrDefault();
             }
             else
             {
@@ -251,28 +245,12 @@ namespace beltexam3.Controllers
             // Return the view of Register
             return View("Index",wrapper);
         }
-        /*private dynamic show_user(int userid)
-        {
-            // Get the user
-            User user = _context.PopulateUserSingle(userid);
-            if (user == null)
-            {
-                Console.WriteLine("Doing user login");
-                // Check to make sure user is logged in
-                return user_login();
-            }
-            // ViewBag settings
-            ViewBag.dashboard = false;
-            // Return the View
-            return View("Show",user);
-        }*/
         private dynamic add_playlist(int songid)
         {
             // Get the current user
             User user = fetchuser();
             if (user == null)
             {
-                Console.WriteLine("Doing user login");
                 // Check to make sure user is logged in
                 return user_login();
             }
@@ -280,11 +258,6 @@ namespace beltexam3.Controllers
             Playlist playlist = new Playlist();
             playlist.UserId = user.Id;
             playlist.SongId = songid;
-            // Check for existing songs
-            //Playlist existing_playlist = _context.PopulatePlaylistSingle(user.Playlist.Id);
-            //Playlist playlist = _context.PopulatePlaylistSingle(user.Playlist.Id);
-            Console.WriteLine("This is the playlist");
-            Console.WriteLine(playlist);
             // Add the song and save the table
             _context.Playlists.Add(playlist);
             _context.SaveChanges();
