@@ -48,6 +48,8 @@ namespace beltexam3.Controllers
             }
             // Navbar variables
             ViewBag.user_name = user.name();
+            // General Viewbag settings
+            ViewBag.dashboard = true;
             // Return the original Index
             SongWrapper songwrapper = new SongWrapper(_context.PopulateSongsAllOrderbyCreatedAt(), song);
             // Return the view of index with list of auctions attached
